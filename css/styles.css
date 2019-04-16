@@ -6,14 +6,38 @@ body { /*Padding for footer and colour of text*/
   font-size: 20px;
 }
 
-.aboutUsSection{
+
+.graph{
+  color: #253D5B;
+  background-color: #A7C6E4;
+
+}
+.breakdown{
   color: #253D5B;
   background-color: #A7C6E4;
 
 }
 
-footer{
 
+table.table-bordered > thead > tr > th{
+    border:3px solid #6e8fc5;
+}
+table.table-bordered > tbody > tr > td{
+    border:3px solid #6e8fc5;
+}
+
+.button{
+  color: #253D5B;
+  background-color: #A7C6E4;
+
+}
+
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #35A793;
   color: #253D5B;
 }
