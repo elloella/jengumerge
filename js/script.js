@@ -1,4 +1,31 @@
 
+const CHART = document.getElementById('myChart');
+console.log(CHART);
+let lineChart = new Chart(CHART, {
+  type:'line',
+
+  data: {
+       labels: ['3/3', '4/3', '5/3', '6/3', '7/3', '8/3', '9/3'],
+       datasets: [{
+           label: 'Blood Pressure',
+            lineTension: 0,
+            fill: false,
+           borderColor: 'rgb(110, 143, 197)',
+           data: [5, 11, 3, 6, 2, 16, 7]
+       }]
+   },
+
+   options: {
+          layout: {
+              padding: {
+                  
+              }
+          }
+      }
+
+
+});
+
 
 window.onload = function() {
   currentYear();
