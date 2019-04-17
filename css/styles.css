@@ -3,11 +3,8 @@ body { /*Padding for footer and colour of text*/
   padding-top: 50px;
   color: #253D5B;
   font-family: 'Libre Franklin', sans-serif;
-  font-size: 20px;
+  font-size: 22px;
 }
-
-
-
 
 .breakdown{
   color: #253D5B;
@@ -31,7 +28,10 @@ table.table-bordered > tbody > tr > td{
 
 
 footer{
-
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #35A793;
   color: #253D5B;
 }
