@@ -16,16 +16,25 @@ let lineChart = new Chart(CHART, {
    },
 
    options: {
-          layout: {
-              padding: {
-                  
-              }
-          }
-      }
+     scales: {
+       yAxes: [{
+         scaleLabel: {
+           display: true,
+           labelString: 'Blood Sugar (mmol/l)'
+         },
+       }],
 
-
+       xAxes: [ {
+         scaleLabel: {
+           display: true,
+           labelString: 'Date'
+         }
+       } ]
+     }
+    }
 });
 
+Chart.defaults.global.defaultFontColor='#253D5B';
 
 window.onload = function() {
   currentYear();

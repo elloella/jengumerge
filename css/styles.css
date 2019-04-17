@@ -5,13 +5,20 @@ body { /*Padding for footer and colour of text*/
   font-family: 'Libre Franklin', sans-serif;
   font-size: 22px;
 }
+.chartContainer {
+    border: 3px solid #6e8fc5;
+    box-sizing: border-box;
 
+}
+
+.icon {
+    color: #253D5B;
+  }
 .breakdown{
   color: #253D5B;
   background-color: #A7C6E4;
 
 }
-
 
 table.table-bordered > thead > tr > th{
     border:3px solid #6e8fc5;
@@ -25,7 +32,6 @@ table.table-bordered > tbody > tr > td{
   background-color: #A7C6E4;
 
 }
-
 
 footer{
   position: fixed;
