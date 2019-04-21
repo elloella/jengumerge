@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<!-- Nav Bar -->
+  <!-- Nav Bar -->
   <header>
     <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="background-color: #35A793;">
       <a class="navbar-brand hvr-grow" href="index.html">
@@ -24,12 +24,12 @@
       </nav>
     </header>
 
-<!-- Graph and Breakdown -->
+    <!-- Graph and Breakdown -->
     <section class="filler container ">
       <div class="row justify-content-around ">
         <div class=" col-6 mt-5">
 
-<!-- Setting up buttons -->
+          <!-- Setting up buttons -->
           <div class="row">
             <div class="col-1 text-center mb-1">
               <button type="button" class="button1 btn btn-default btn-sm mt-2 pt-2 pb-2" >Blood Pressure</button>
@@ -38,69 +38,122 @@
               <button type="button" class="button1 btn btn-default btn-sm mt-2 pt-2 pb-2" >Blood Sugar</button>
             </div>
 
-<!-- Dropdown button -->
-          <div class="dropdown col text-right ">
-            <button class="buttonDR btn btn-default btn-sm mt-2 pt-2 pb-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              7 Days
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">14 Days</a>
+            <!-- Dropdown button -->
+            <div class="dropdown col text-right ">
+              <button class="buttonDR btn btn-default btn-sm mt-2 pt-2 pb-2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                7 Days
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">1 Day</a>
+              </div>
             </div>
           </div>
-          </div>
 
-<!-- Setting up chart-->
-          <canvas id="myChartBS" class="chartContainer" </canvas>
-          </div>
 
-<!-- Setting up breakdown -->
-          <div class="breakdown col-6 mt-5">
-            <h class="font-weight-bold"> Daily Breakdown: </h>
-            <p class="font-weight-bold" > 3/3/19 </p>
+          <!-- Setting up chart-->
+          <div class="chartContainer">
+            <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#Add" ></i>
+            <canvas id="myChart"> </canvas>
+
+            <div class="row symbols">
+              <i class="col text-left fas fa-chevron-left pb-1 " id="left"></i>
+              <i class="col text-right fas fa-chevron-right pb-1" id="right"></i>
+            </div>
           </div>
         </div>
-      </section>
 
-<!-- Table  -->
-      <section class= "ta container text-center mt-3 pt-3 pb-3 ">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">LOWEST</th>
-              <th scope="col">HIGHEST</th>
-              <th scope="col">AVERAGE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>4.3</td>
-              <td>17.6</td>
-              <td>8.1</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
-<!-- GP Button -->
-      <div class="container">
-        <div class="row">
-          <div class="col text-center">
-            <button type="button" class="button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" > Have a question for your GP?</button>
-          </div>
+
+        <!-- Setting up breakdown -->
+        <div class="breakdown col-6 mt-5">
+          <h class="font-weight-bold"> Daily Breakdown: </h>
+          <p class="font-weight-bold"> 15/3 </p>
         </div>
       </div>
+    </section>
 
-<!-- Footer -->
-      <footer class="text-center mt-5 pt-1 pb-1">
-        <div class="container">
-          <small>Copyright &copy; <span id="autoDate"></span></small>
+    <!-- Table  -->
+    <section class= "ta container text-center mt-3 pt-3 pb-3 ">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">LOWEST</th>
+            <th scope="col">HIGHEST</th>
+            <th scope="col">AVERAGE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4.3</td>
+            <td>17.6</td>
+            <td>8.1</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- GP Button -->
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <button type="button" class="button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" > Have a question for your GP?</button>
         </div>
-      </footer>
+      </div>
+    </div>
 
-<!-- Scripts-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/script.js"></script>
+    <!-- Add Modal -->
 
-    </body>
-    </html>
+    <div class="modal fade" id="Add" tabindex="-1" role="dialog" aria-labelledby="Addlabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class=" col-12 modal-title text-center" id="Addlabel">Daily Log
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span> <h/5>
+              </div>
+              <div class="modal-body">
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group ">
+                      <input id="Date" class="test form-control" name="Date" type="text" placeholder="Date" required />
+                    </div>
+                    <div class="form-group ">
+                      <input id="Breakfast Figures" class="test form-control" name="Breakfast Figures" type="text" placeholder="Breakfast Figures" required />
+                    </div>
+                    <div class="form-group ">
+                      <input id="Lunch Figures" class="test form-control" name="Lunch Figures" type="text" placeholder="Lunch Figures" required />
+                    </div>
+                    <div class="form-group ">
+                      <input id="Dinner Figures" class="test form-control" name="Dinner Figures" type="text" placeholder="Dinner Figures" required />
+                    </div>
+                    <div class="form-group ">
+                      <input id="Night Figures" class="test form-control" name="Night Figures" type="text" placeholder="Night Figures" required />
+                    </div>
+                    <div class="form-group ">
+                      <input id="Notes" class="test form-control" name="Notes" type="text" placeholder="Notes" required />
+                    </div>
+
+                  </form>
+                </div>
+                <div class="modalbutton mb-3 text-center">
+                  <button type="button" class="button btn btn-default col-5 ">Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center mt-5 pt-1 pb-1">
+          <div class="container">
+            <small>Copyright &copy; <span id="autoDate"></span></small>
+          </div>
+        </footer>
+
+        <!-- Scripts-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+
+      </body>
+      </html>
