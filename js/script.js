@@ -3,7 +3,7 @@ var chart_labels = ['10/3', '11/3', '12/3', '13/3', '14/3', '15/3', '16/3'];
 var sugar_dataset = [5, 11, 3, 6, 2, , ];
 var ctx =
 document.getElementById('myChart');
-document.getElementById('lowest').firstChild.data = '3.2';
+document.getElementById('lowest').firstChild.data = '3.7';
 document.getElementById('highest').firstChild.data = '14.3';
 document.getElementById('average').firstChild.data = '6.7';
 
@@ -77,6 +77,19 @@ $("#left").click(function() {
   document.getElementById('average').firstChild.data = '8.1';
 });
 
+
+//Setting up second chart
+$("#BS").click(function() {
+  var chart_labels = ['9.00', '12.00', '18.00', '22.00',];
+  var sugar_dataset = [6, 11, 3, 4,];
+  var data = myChart_chart.config.data;
+  data.datasets[0].data = sugar_dataset;
+  data.labels = chart_labels;
+  myChart_chart.update();
+  document.getElementById('lowest').firstChild.data = '3.2';
+  document.getElementById('highest').firstChild.data = '7.4';
+  document.getElementById('average').firstChild.data = '5.2';
+});
 
 Chart.defaults.global.defaultFontColor='#253D5B'; //Setting the font colour of graph
 
