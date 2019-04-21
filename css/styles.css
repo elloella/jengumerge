@@ -4,6 +4,9 @@ body { /*Setting the body font and size.*/
   font-family: 'Libre Franklin', sans-serif;
   font-size: 22px;
 }
+
+
+
 /*Editing the chart container to add border*/
 .chartContainer {
     border: 3px solid #6e8fc5;
@@ -88,3 +91,6 @@ font-size: 28px;
      border-top-left-radius: 5px;
      border-top-right-radius: 5px;
  }
+
+#left-bp { display: none; }
+#right-bp { display: none; }
