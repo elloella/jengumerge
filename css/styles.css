@@ -7,6 +7,7 @@ body { /*Setting the body font and size.*/
 
 .navbar{
   background-color: #35A793;
+  /* background-color: #6e8fc5; */
   /* background-color: #319886; */
   /* border-bottom: 3px solid #35A793; */
   /* border: 3px solid #35A793; */
@@ -15,9 +16,8 @@ body { /*Setting the body font and size.*/
 /*Setting colour of profile icon*/
 .icon {
     color: #253D5B;
-    
-}
 
+}
 
 /*Editing the chart container to add border*/
 .chartContainer {
@@ -108,6 +108,8 @@ font-size: 28px;
   border-width: 1px;
 }
 
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
+.toggle.ios .toggle-handle { border-radius: 20px; }
 .modal-header {
     padding:9px 15px;
     border-bottom:1px solid #6e8fc5;
