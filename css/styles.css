@@ -5,6 +5,18 @@ body { /*Setting the body font and size.*/
   font-size: 22px;
 }
 
+.navbar{
+  background-color: #35A793;
+  /* background-color: #319886; */
+  /* border-bottom: 3px solid #35A793; */
+  /* border: 3px solid #35A793; */
+}
+
+/*Setting colour of profile icon*/
+.icon {
+    color: #253D5B;
+    
+}
 
 
 /*Editing the chart container to add border*/
@@ -12,16 +24,21 @@ body { /*Setting the body font and size.*/
     border: 3px solid #6e8fc5;
     box-sizing: border-box;
 }
-/*Setting colour of profile icon*/
-.icon {
-    color: #253D5B;
-  }
 
 /*Setting colour of breakdown section*/
-.breakdown{
+/* .breakdown{
   color: #253D5B;
   background-color: #A7C6E4;
+} */
 
+.breakdownContainer{
+  color: #253D5B;
+  background-color: #A7C6E4;
+  font-size: 18px;
+}
+
+h{
+  font-size: 22px;
 }
 
 /*Setting the boarder colour for the table*/
@@ -31,6 +48,11 @@ table.table-bordered > thead > tr > th{
 table.table-bordered > tbody > tr > td{
     border:3px solid #6e8fc5;
 }
+
+.table{
+  font-size: 18px;
+}
+
 /*Setting the button colours*/
 .button{
   color: #253D5B;
@@ -41,9 +63,12 @@ table.table-bordered > tbody > tr > td{
 .button1{
   color: #253D5B;
   background-color: #ffffff;
-  border-color: #6e8fc5;
+  border-bottom-color: #6e8fc5;
+  border-right-color: #6e8fc5;
   border-width: 3px;
 }
+
+
 /*Setting the button dropdown colours*/
 .buttonDR{
   color: #253D5B;
@@ -51,6 +76,7 @@ table.table-bordered > tbody > tr > td{
   border-color: #6e8fc5;
   border-width: 3px;
 }
+
 /*Setting the footer conditions*/
 footer{
   position: fixed;
@@ -58,11 +84,12 @@ footer{
   bottom: 0;
   width: 100%;
   background-color: #35A793;
-  color: #253D5B;
+  color: #ffffff;
+  font-size: 16px;
 }
 
 
-/*PROFILE PAGE*/
+/***PROFILE PAGE***/
 
 /*Setting up header font*/
 .header{
@@ -80,6 +107,7 @@ font-size: 28px;
   border-color: #A7C6E4;
   border-width: 1px;
 }
+
 .modal-header {
     padding:9px 15px;
     border-bottom:1px solid #6e8fc5;
