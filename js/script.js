@@ -268,3 +268,43 @@ function currentYear(){
 //   document.getElementById('highest').firstChild.data = '7.4';
 //   document.getElementById('average').firstChild.data = '5.2';
 // });
+
+//Chat box
+
+
+$(document).ready(function(){
+
+ $('.msg_head').click(function(){
+  var chatbox = $(this).parents().attr("rel") ;
+  $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
+  return false;
+ });
+
+$("#GP").click(function() {
+  var chatbox = $(this).parents().parents().attr("rel") ;
+  $('[rel="'+chatbox+'"]').show();
+  return false;
+});
+
+ $('.close').click(function(){
+
+  var chatbox = $(this).parents().parents().attr("rel") ;
+  $('[rel="'+chatbox+'"]').hide();
+  return false;
+ });
+
+ $('textarea').keypress(
+    function(e){
+
+        if (e.keyCode == 13) {
+            var msg = $(this).val();
+   $(this).val('');
+   if(msg.trim().length != 0){
+   var chatbox = $(this).parents().parents().parents().attr("rel") ;
+   $('<div class="msg-right">'+msg+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
+   $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+   }
+        }
+    });
+
+});

@@ -7,6 +7,7 @@ body { /*Setting the body font and size.*/
 
 .navbar{
   background-color: #6e8fc5;
+
 }
 
 /*Setting colour of profile icon*/
@@ -23,7 +24,7 @@ body { /*Setting the body font and size.*/
 
 .breakdownContainer{
   color: #253D5B;
-  background-color: #35A793;
+  background-color: #6e8fc5;
   font-size: 18px;
 }
 
@@ -82,7 +83,7 @@ table.table-bordered > tbody > tr > td{
 
 /*Setting the footer conditions*/
 footer{
-  /* position: fixed; */
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -131,3 +132,77 @@ font-size: 28px;
 
 #left-bp { display: none; }
 #right-bp { display: none; }
+
+
+.msg_box{
+ position:fixed;
+ bottom:-5px;
+ width:320px;
+ background:white;
+ border-radius:5px 5px 0px 0px;
+}
+
+.msg_head{
+ background: #6E8FC5;
+ color: #253D5B;
+ padding:7px;
+ cursor:pointer;
+ border-radius:5px 5px 0px 0px;
+ font-size: 20px;
+}
+
+.msg_body{
+ background:white;
+ height:250px;
+ font-size:14px;
+ padding:15px;
+ overflow:auto;
+ overflow-x: hidden;
+ border-left: 2px solid #6E8FC5;
+ border-right: 2px solid #6E8FC5;
+
+}
+
+.msg_input{
+ width:100%;
+ height: 45px;
+ font-size: 14px;
+ box-sizing: border-box;
+ border: 2px solid #6E8FC5;
+}
+
+
+
+.close{
+ float:right;
+ cursor:pointer;
+}
+
+.minimize{
+ float:right;
+ cursor:pointer;
+ padding-right:5px;
+
+}
+
+.msg-left{
+ position:relative;
+ background:#A7C6E4;
+ padding:6px;
+ min-height:10px;
+ margin-bottom:5px;
+ margin-right:50px;
+ border-radius:5px;
+ word-break: break-all;
+}
+
+.msg-right{
+ background:#d4e7fa;
+ padding:5px;
+ min-height:15px;
+ margin-bottom:5px;
+ position:relative;
+ margin-left:50px;
+ border-radius:5px;
+ word-break: break-all;
+}

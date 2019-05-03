@@ -22,34 +22,25 @@
         </nav>
       </header>
 
-      <!-- Tabs Testing -->
-      <!-- <div class="row mt-5 ml-5">
-      <ul class="nav nav-tabs " id="myTab" role="tablist">
-      <li class="nav-item text-center ">
-      <a class="active button button1" id="BP-tab" data-toggle="tab" href="#BP" role="tab" aria-controls="BP" aria-selected="true">Blood Pressure</a>
-    </li>
-    <li class="nav-item text-center ">
-    <a class=" button button1" id="BS-tab" data-toggle="tab" href="#BS" role="tab" aria-controls="BS" aria-selected="false">Blood Sugar</a>
-  </li>
-  </ul>
-  </div> -->
+
 
   <!-- Graph and Breakdown -->
   <section class="filler container-fluid ">
     <div class="row ">
       <div class="col-md-6 mt-5 d-flex align-self-stretch">
-        <!-- Setting up chart-->
+
+<!-- Setting up chart-->
         <div class="chartContainer w-100">
           <div class="row" role="tablist">
-            <div class="col-1 text-center">
+            <!-- <div class="col-1 text-center">
               <button type="button" class="button1 btn btn-default btn-sm pb-2" id="bp" data-toggle="tab" href="#BP" role="tab" aria-controls="BP" aria-selected="true">Blood Pressure</button>
-            </div>
-            <div class="col-5 text-center">
+            </div> -->
+            <!-- <div class="col-5 text-center">
               <button type="button" class="button1 btn btn-default btn-sm pb-2" id="bs" data-toggle="tab" href="#BS" role="tab" aria-controls="BS" aria-selected="false">Blood Sugar</button>
-            </div>
+            </div> -->
           </div>
           <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#Add" ></i>
-
+             <canvas id="myChart" > </canvas>
           <div class="row symbols">
             <i class="col text-left fas fa-chevron-left pb-1 " id="left-bs" ></i>
             <i class="col text-right fas fa-chevron-right pb-1" id="right-bs"></i>
@@ -99,7 +90,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col text-center">
-        <button type="button" class="button btn btn-default btn-block btn-lg mt-2 pb-2" > Have a question for your GP?</button>
+        <button type="button" id="GP" class="button btn btn-default btn-block btn-lg mt-2 pb-2" > Have a question for your GP?</button>
       </div>
     </div>
   </div>
@@ -144,8 +135,9 @@
         </div>
       </div>
 
+
 <!-- Tabs Testing -->
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-sm-6">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -172,7 +164,7 @@
         </div>
       </div>
     </div>
-    </div>
+    </div> -->
 
 <!-- Footer -->
 
@@ -181,6 +173,22 @@
       <small>Copyright &copy; <span id="autoDate"></span></small>
     </div>
   </footer>
+
+<!-- Chat -->
+
+        <div class="msg_box" style="right:0px" rel="skp">
+
+         <div class="msg_head"> <i class="far fa-comments pl-2 pr-2"> </i>GP Chat
+          <div class="close">x</div>
+         </div>
+         <div class="msg_wrap">
+          <div class="msg_body">
+           <div class="msg-left">Hello, how can I help you today? </div>
+           <div class="msg_push"></div>
+          </div>
+          <div class="msg_footer"><textarea class="msg_input"></textarea></div>
+         </div>
+        </div>
 
 <!-- Scripts-->
   <script src="js/jquery.min.js"></script>
