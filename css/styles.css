@@ -6,8 +6,8 @@ body { /*Setting the body font and size.*/
 }
 
 .navbar{
-  background-color: #35A793;
-  /* background-color: #6e8fc5; */
+  /* background-color: #35A793; */
+  background-color: #6e8fc5;
   /* background-color: #319886; */
   /* border-bottom: 3px solid #35A793; */
   /* border: 3px solid #35A793; */
@@ -59,6 +59,18 @@ table.table-bordered > tbody > tr > td{
   background-color: #A7C6E4;
 }
 
+.nav-tabs .nav-item{
+  color: #253D5B;
+  background-color: #fff;
+  border: 4px solid #6e8fc5;
+  border-width: 3px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  font-weight: bold;
+  border-bottom-color: #fff;
+}
+
 /*Setting the button colours*/
 .button1{
   color: #253D5B;
@@ -79,7 +91,7 @@ table.table-bordered > tbody > tr > td{
 
 /*Setting the footer conditions*/
 footer{
-  position: fixed;
+  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -108,8 +120,6 @@ font-size: 28px;
   border-width: 1px;
 }
 
-.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
-.toggle.ios .toggle-handle { border-radius: 20px; }
 .modal-header {
     padding:9px 15px;
     border-bottom:1px solid #6e8fc5;
