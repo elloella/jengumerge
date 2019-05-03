@@ -21,12 +21,6 @@ body { /*Setting the body font and size.*/
     box-sizing: border-box;
 }
 
-/*Setting colour of breakdown section*/
-/* .breakdown{
-  color: #253D5B;
-  background-color: #A7C6E4;
-} */
-
 .breakdownContainer{
   color: #253D5B;
   background-color: #35A793;
@@ -55,6 +49,7 @@ table.table-bordered > tbody > tr > td{
   background-color: #A7C6E4;
 }
 
+/*Styling the tabs */
 .nav-tabs .nav-item{
   color: #253D5B;
   background-color: #fff;
@@ -109,6 +104,12 @@ font-size: 28px;
  color: #253D5B;
  background-color: #A7C6E4;
 
+}
+
+.form-control{
+  color: #253D5B;
+  background-color: #A7C6E4;
+  font-size: 20px;
 }
 .test{
   color: #253D5B;
