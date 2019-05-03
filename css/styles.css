@@ -6,11 +6,7 @@ body { /*Setting the body font and size.*/
 }
 
 .navbar{
-  /* background-color: #35A793; */
   background-color: #6e8fc5;
-  /* background-color: #319886; */
-  /* border-bottom: 3px solid #35A793; */
-  /* border: 3px solid #35A793; */
 }
 
 /*Setting colour of profile icon*/
@@ -33,7 +29,7 @@ body { /*Setting the body font and size.*/
 
 .breakdownContainer{
   color: #253D5B;
-  background-color: #A7C6E4;
+  background-color: #35A793;
   font-size: 18px;
 }
 
@@ -95,7 +91,7 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #35A793;
+  background-color: #6e8fc5;
   color: #ffffff;
   font-size: 16px;
 }
