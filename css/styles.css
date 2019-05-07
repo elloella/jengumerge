@@ -6,7 +6,9 @@ body { /*Setting the body font and size.*/
 }
 
 .navbar{
-  background-color: #6e8fc5;
+  /* background-color: #6e8fc5; */
+  background-color: #35a793;
+
 
 }
 
@@ -24,7 +26,7 @@ body { /*Setting the body font and size.*/
 
 .breakdownContainer{
   color: #253D5B;
-  background-color: #6e8fc5;
+  background-color: #a7c6e4;
   font-size: 18px;
 }
 
@@ -87,7 +89,7 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #6e8fc5;
+  background-color: #35a793;
   color: #ffffff;
   font-size: 16px;
 }

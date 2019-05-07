@@ -271,27 +271,24 @@ function currentYear(){
 
 //Chat box
 
-
-$(document).ready(function(){
-
- $('.msg_head').click(function(){
-  var chatbox = $(this).parents().attr("rel") ;
-  $('[rel="'+chatbox+'"] .msg_wrap').slideToggle('slow');
-  return false;
- });
-
-$("#GP").click(function() {
-  var chatbox = $(this).parents().parents().attr("rel") ;
-  $('[rel="'+chatbox+'"]').show();
-  return false;
+$('.GPCHAT').click(function(){
+ $('.chat').show();
+ return false;
 });
 
- $('.close').click(function(){
 
-  var chatbox = $(this).parents().parents().attr("rel") ;
-  $('[rel="'+chatbox+'"]').hide();
+ $('.msg_head').click(function(){
+ var chatbox
+  $('.msg_wrap').slideToggle('slow');
   return false;
  });
+
+
+ $('.close').click(function(){
+  $('.chat').hide();
+  return false;
+ });
+
 
  $('textarea').keypress(
     function(e){
@@ -306,5 +303,3 @@ $("#GP").click(function() {
    }
         }
     });
-
-});
