@@ -105,7 +105,6 @@ $("#left-bs").click(function() {
   document.getElementById('right-bp').style.display="none";
 });
 
-
 // Setting up BP current week chart
 $("#bp, #right-bp").click(function() {
   var config = {
@@ -244,6 +243,38 @@ $("#left-bp").click(function() {
   document.getElementById('right-bp').style.display="inline-block";
 });
 
+//Chat box
+
+$('.GPCHAT').click(function(){
+  $('.chat').show();
+  return false;
+});
+
+$('.msg_head').click(function(){
+  var chatbox
+  $('.msg_wrap').slideToggle('slow');
+  return false;
+});
+
+$('.exit').click(function(){
+  $('.chat').hide();
+  return false;
+});
+
+$('textarea').keypress(
+  function(e){
+    if (e.keyCode == 13) {
+      var msg = $(this).val();
+      $(this).val('');
+      if(msg.trim().length != 0){
+        var chatbox = $(this).parents().parents().parents().attr("rel") ;
+        $('<div class="msg-right">'+msg+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
+        $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+      }
+    }
+  });
+
+
 Chart.defaults.global.defaultFontColor='#253D5B'; //Setting the font colour of graph
 
 window.onload = function() { //Setting up copyright
@@ -254,52 +285,3 @@ function currentYear(){
   const autoDate = document.querySelector('#autoDate');
   autoDate.textContent = date.getFullYear();
 };
-
-
-// //Setting up 1 day BS Chart
-// $("#1day").click(function() {
-//   var chart_labels = ['9.00', '12.00', '18.00', '22.00',];
-//   var sugar_dataset = [6, 11, 3, 4,];
-//   var data = myChart_chart.config.data;
-//   data.datasets[0].data = sugar_dataset;
-//   data.labels = chart_labels;
-//   myChart_chart.update();
-//   document.getElementById('lowest').firstChild.data = '3.2';
-//   document.getElementById('highest').firstChild.data = '7.4';
-//   document.getElementById('average').firstChild.data = '5.2';
-// });
-
-//Chat box
-
-$('.GPCHAT').click(function(){
- $('.chat').show();
- return false;
-});
-
-
- $('.msg_head').click(function(){
- var chatbox
-  $('.msg_wrap').slideToggle('slow');
-  return false;
- });
-
-
- $('.close').click(function(){
-  $('.chat').hide();
-  return false;
- });
-
-
- $('textarea').keypress(
-    function(e){
-
-        if (e.keyCode == 13) {
-            var msg = $(this).val();
-   $(this).val('');
-   if(msg.trim().length != 0){
-   var chatbox = $(this).parents().parents().parents().attr("rel") ;
-   $('<div class="msg-right">'+msg+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
-   $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
-   }
-        }
-    });
