@@ -4,7 +4,7 @@ module.exports = {
             return next();
           } else {
             req.flash('error_msg', 'Not logged in');
-            res.redirect('/account/signin');
+            res.redirect('/account/home');
         }
     }
 }

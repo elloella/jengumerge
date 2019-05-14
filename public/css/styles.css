@@ -82,7 +82,7 @@ table.table-bordered > tbody > tr > td{
 
 .msg_head{
  background: #6E8FC5;
- color: #253D5B;
+ color: #ffffff;
  padding:7px;
  cursor:pointer;
  border-radius:5px 5px 0px 0px;
@@ -197,6 +197,12 @@ font-size: 28px;
   background-color: #FFFFFF;
   font-size: 20px;
 }
+
+.logoutbutton{
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
 
 footer{ /*Setting the footer conditions*/
   position: fixed;

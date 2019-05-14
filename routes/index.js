@@ -20,10 +20,8 @@ router.get('/profile', (req, res) => {
 
 router.get('/logout', (req,res) => {
     req.logout();
-    req.flash('success_msg', 'Successfully Logged out');
+    req.flash('success_msg', 'Successfully logged out');
     res.redirect('/account/home');
 })
-
-
 
 module.exports = router;
