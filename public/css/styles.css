@@ -9,7 +9,7 @@ body { /*Setting the body font and size.*/
   background-color: #35A793;
 }
 
-.icon { /*Setting colour of profile icon*/
+.profileicon { /*Setting colour of profile icon*/
     color: #253D5B;
 }
 
@@ -18,13 +18,13 @@ body { /*Setting the body font and size.*/
     box-sizing: border-box;
 }
 
-.breakdownContainer{
+.breakdownContainer{ /*Setting conditions of breakdown container*/
   color: #253D5B;
   background-color: #a7c6e4;
   font-size: 18px;
 }
 
-h{
+.DB{ /*Setting font size of breakdown title */
   font-size: 22px;
 }
 
@@ -35,11 +35,11 @@ table.table-bordered > tbody > tr > td{
     border:3px solid #6e8fc5;
 }
 
-.table{
+.table{ /* Setting font size of table */
   font-size: 18px;
 }
 
-.button{ /*Setting the button colours*/
+.GPbutton{ /*Setting the GP button colours*/
   color: #253D5B;
   background-color: #A7C6E4;
 }
@@ -56,37 +56,22 @@ table.table-bordered > tbody > tr > td{
   border-bottom-color: #fff;
 }
 
-.button1{ /*Setting the button colours*/
-  color: #253D5B;
-  background-color: #ffffff;
-  border-bottom-color: #6e8fc5;
-  border-right-color: #6e8fc5;
-  border-width: 3px;
-}
+#left-bp { display: none; }
+#right-bp { display: none; }
 
+.modal-header { /* Setting the conditions of header for modals */
+    padding:9px 15px;
+    border-bottom:1px solid #6e8fc5;
+    background-color: #6e8fc5;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
 
-/*Setting the button dropdown colours*/
-.buttonDR{
-  color: #253D5B;
-  background-color: #ffffff;
-  border-color: #6e8fc5;
-  border-width: 3px;
-}
-
-
-footer{ /*Setting the footer conditions*/
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color:  #35A793;
-  color: #ffffff;
-  font-size: 16px;
-}
-
-
-/*Chat box*/
-
+/*Chat box conditions  Found at - https://www.skptricks.com/2018/02/facebook-style-chat-box-popup-layout-design.html*/
 .msg_box{
  position:fixed;
  bottom:-5px;
@@ -113,7 +98,6 @@ footer{ /*Setting the footer conditions*/
  overflow-x: hidden;
  border-left: 2px solid #6E8FC5;
  border-right: 2px solid #6E8FC5;
-
 }
 
 .msg_input{
@@ -124,8 +108,6 @@ footer{ /*Setting the footer conditions*/
  border: 2px solid #6E8FC5;
 }
 
-
-
 .exit{
  float:right;
  cursor:pointer;
@@ -135,7 +117,6 @@ footer{ /*Setting the footer conditions*/
  float:right;
  cursor:pointer;
  padding-right:5px;
-
 }
 
 .msg-left{
@@ -162,75 +143,62 @@ footer{ /*Setting the footer conditions*/
 
 /***PROFILE PAGE***/
 
-/*Setting up header font*/
-.header{
+.header{ /*Setting up header font*/
 font-size: 28px;
 }
 
-/*Setting up colour of profile boxes*/
-.profile{
+
+.profile{ /*Setting up colour of profile boxes*/
  color: #253D5B;
  background-color: #A7C6E4;
 
 }
 
-.form-control{
+.form-control{ /* Setting the conditions for the form */
   color: #253D5B;
   background-color: #A7C6E4;
   font-size: 20px;
 }
-.test{
-  color: #253D5B;
-  border-color: #A7C6E4;
-  border-width: 1px;
-}
 
-.modal-header {
-    padding:9px 15px;
-    border-bottom:1px solid #6e8fc5;
-    background-color: #6e8fc5;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-     border-top-left-radius: 5px;
-     border-top-right-radius: 5px;
- }
+/***SIGN IN & SIGN UP CONDITIONS***/
 
-#left-bp { display: none; }
-#right-bp { display: none; }
-
-.signinbutton{
+.signinbutton{ /* Setting colour of sign in button*/
   color: #253D5B;
   background-color: #A7C6E4;
 }
 
-.signin{
+.signin{ /* Setting font size of sign in text */
   font-size: 26px;
 }
 
-.form-container{
+.form-container{ /* Setting conditions of the form container */
   color: #253D5B;
   border: 2px solid #6e8fc5;
-
 }
 
-.test {
+.form { /* Setting conditions of the form to center it */
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.signup{
+.signup{ /*  Setting conditions of sign up*/
   color: #253D5B;
   font-size: 16px;
-  /* border: 3px solid #6e8fc5; */
-
 }
 
-.formdetails{
+.formdetails{ /* Setting more form conditions*/
   color: #253D5B;
   background-color: #FFFFFF;
   font-size: 20px;
+}
+
+footer{ /*Setting the footer conditions*/
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:  #35A793;
+  color: #ffffff;
+  font-size: 16px;
 }

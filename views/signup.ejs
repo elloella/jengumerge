@@ -1,10 +1,10 @@
 
 <section class="filler container-fluid ">
   <div class="row ">
-    <div class="col mt-5 test">
+    <div class="col mt-5 form">
       <div class="card-content red-text text-lighten-2">
         <h1 class="signin center-align text-center pb-2">Sign Up</h1>
-          <% include ./partials/messages %>
+        <% include ./partials/messages %>
         <div class="card-action">
           <form class= "form-container rounded  pt-3 pb-3 pr-3 pl-3" action="/account/signup" method="POST">
             <input class="form-control formdetails" placeholder="First Name" id="firstName" name="firstName" type="text" value="<%= typeof firstName != 'undefined' ? firstName : '' %>" />
