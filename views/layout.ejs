@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  <link href="/css/styles.css" rel="stylesheet">
+  <title>Jengu</title>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <header>
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark">
+      <a class="navbar-brand hvr-grow" href="/dashboard">
+        <img src="/img/Logo.png" width="80" height="40" alt=""> </a>
+      </button>
+      <a class="navbar-brand hvr-grow ml-auto" href="/profile" target="_blank"> <i class="icon far fa-user" ></i> </a>
+    </nav>
+  </header>
+  <%- body %>
+
+  <!-- Footer -->
+
+  <footer class="text-center mt-3 pt-1 pb-1">
+    <div class="container">
+      <small>Copyright &copy; <span id="autoDate"></span></small>
+    </div>
+  </footer>
+  <!--Chat -->
+  <div class = "chat" style="display:none">
+    <div class="msg_box" id="chat" style="right:0px" rel="chat">
+      <div class="msg_head"> <i class="far fa-comments pl-2 pr-2"> </i>GP Chat
+        <div class="exit">x</div>
+      </div>
+      <div class="msg_wrap">
+        <div class="msg_body">
+          <div class="msg-left">Hello, how can I help you today? </div>
+          <div class="msg_push"></div>
+        </div>
+        <div class="msg_footer"><textarea class="msg_input"></textarea></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!--Details Section as Form-->
+    <section class="profiledetails container mt-3">
+      <form>
+        <div class="form-row ">
+          <div class="col-6">
+            <div class="header col-5 mt-5 ">
+              <i class="icon far fa-user"></i>
+              <h>Your Profile </h>
+            </div>
+              <input type="text" class="form-control mt-4" placeholder= "Name">
+              <input type="text" class="form-control mt-4" placeholder="Gender">
+              <input type="text" class="form-control mt-4" placeholder="Age">
+              <input type="text" class="form-control mt-4" placeholder="Condition">
+              <input type="text" class="form-control mt-4" placeholder="Height">
+              <input type="text" class="form-control mt-4" placeholder="Weight">
+           </div>
+
+          <div class="col-6">
+            <div class="header col-5 mt-5 ">
+              <i class="fas fa-cog"></i>
+              <h>Your Settings </h>
+            </div>
+              <input type="text" class="form-control mt-4" placeholder="Message Notifications">
+              <input type="text" class="form-control mt-4" placeholder="Tracking Reminders">
+              <input type="text" class="form-control mt-4" placeholder="Medication Reminders">
+
+          </div>
+        </form>
+      </section>
+
+    <!-- <div class="container">
+      <div class="row ">
+        <div class="col text-center mt-5 ">
+          <button type="button" class="button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" data-toggle="modal" data-target="#Signup" > Sign up here!</button>
+        </div>
+      </div>
+    </div> -->
+
+<!-- Modal -->
+<div class="modal fade" id="Signup" tabindex="-1" role="dialog" aria-labelledby="signuplabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class=" col-12 modal-title text-center" id="signuplabel">Sign Up!
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span> <h/5>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+              <form>
+                <div class="form-group ">
+                  <input id="Name" class="test form-control" name="Name" type="text" placeholder="Name" required />
+                </div>
+                <div class="form-group ">
+                  <input id="Email" class="test form-control" name="Email" type="text" placeholder="Email" required />
+                </div>
+                <div class="form-group ">
+                  <input id="Password" class="test form-control" name="Password" type="text" placeholder="Password" required />
+                </div>
+                <div class="form-group ">
+                  <input id="Condition" class="test form-control" name="Condition" type="text" placeholder="Condition" required />
+                </div>
+              </form>
+            </div>
+            <div class="modalbutton mb-3 text-center">
+              <button type="button" class="button btn btn-default col-5 ">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

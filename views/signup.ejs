@@ -1,0 +1,23 @@
+
+<section class="filler container-fluid ">
+  <div class="row ">
+    <div class="col mt-5 test">
+      <div class="card-content red-text text-lighten-2">
+        <h1 class="signin center-align text-center pb-2">Sign Up</h1>
+          <% include ./partials/messages %>
+        <div class="card-action">
+          <form class= "form-container rounded  pt-3 pb-3 pr-3 pl-3" action="/account/signup" method="POST">
+            <input class="form-control formdetails" placeholder="First Name" id="firstName" name="firstName" type="text" value="<%= typeof firstName != 'undefined' ? firstName : '' %>" />
+            <input class="form-control formdetails mt-3 mb-3"placeholder="Last Name" id="lastName" name="lastName" type="text" value="<%= typeof lastName != 'undefined' ? lastName : '' %>"/>
+            <input class="form-control formdetails mt-3 mb-3"  placeholder="Email" id="email" name="email" type="email" value="<%= typeof email != 'undefined' ? email : '' %>"/>
+            <input class="form-control formdetails mt-3 mb-3" placeholder="Password" id="password" name="password" type="password" />
+            <input class="form-control formdetails mt-3 mb-3" placeholder="Confirm Password" id="confirmPassword" name="confirmPassword" type="password" />
+
+            <button class="button btn btn-block" type="submit" name="action">Sign Up </button>
+          </form>
+        </div>
+        <h1 class="signup rounded center-align text-center mt-2 pt-3 "> <p>Already have an account? <a href="/account/home" class="black-text">Log in here</a> </p>
+        </div>
+      </div>
+    </div>
+  </section>
