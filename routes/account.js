@@ -22,7 +22,7 @@ router.post('/signup', (req, res) =>{
   }
 
   if(password.length < 6 ){
-    errorMsgs.push({ msg: 'Passwords need to be 6 characters'});
+    errorMsgs.push({ msg: 'Passwords need to be longer than 6 characters'});
   }
 
   if (errorMsgs.length > 0 ){
@@ -61,7 +61,7 @@ router.post('/signup', (req, res) =>{
           newUser.password = hash;
           newUser.save()
           .then(user => {
-            req.flash('success_msg', 'Thanks');
+            req.flash('success_msg', 'Thank you');
             res.redirect('/account/home')
           })
           .catch( err => console.log(err));
