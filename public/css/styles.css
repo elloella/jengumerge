@@ -203,6 +203,16 @@ font-size: 28px;
   background-color: #A7C6E4;
 }
 
+.card-panel { /*setting conditions for the error card-panel */
+  color: #253D5B;
+  background-color: #A7C6E4;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
 
 footer{ /*Setting the footer conditions*/
   position: fixed;
@@ -212,18 +222,4 @@ footer{ /*Setting the footer conditions*/
   background-color:  #35A793;
   color: #ffffff;
   font-size: 16px;
-}
-
-.card-panel {
-  color: #253D5B;
-  background-color: #A7C6E4;
-  font-size: 16px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-align: center;
-
-
-
 }
