@@ -24,4 +24,9 @@ router.get('/logout', (req,res) => {
     res.redirect('/account/home');
 })
 
+router.post('/AddBPStats', (req, res) =>{
+  console.log(req.body);
+  res.redirect('/dashboard');
+})
+
 module.exports = router;
