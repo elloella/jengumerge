@@ -10,7 +10,7 @@ router.get('/signup', (req, res) =>{
 })
 
 router.post('/signup', (req, res) =>{
-  const { firstName, lastName, email, password, confirmPassword } = req.body;
+  const { firstName, lastName, email, password, confirmPassword, gender, age, condtion, height, weight } = req.body;
   let errorMsgs = [];
 
   if(!firstName || !lastName || !email || !password || !confirmPassword){
@@ -45,7 +45,12 @@ router.post('/signup', (req, res) =>{
           lastName,
           email,
           password,
-          confirmPassword
+          confirmPassword,
+          gender,
+          age,
+          condition,
+          height,
+          weight
         });
       } else {
         const newUser = new User ({

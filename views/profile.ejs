@@ -7,21 +7,24 @@
           <i class="profileicon far fa-user"></i>
           <h>Your Profile </h>
         </div>
-        <input type="text" class="form-control mt-4" placeholder= "Name">
-        <input type="text" class="form-control mt-4" placeholder="Gender">
-        <input type="text" class="form-control mt-4" placeholder="Age">
-        <input type="text" class="form-control mt-4" placeholder="Condition">
-        <input type="text" class="form-control mt-4" placeholder="Height">
-        <input type="text" class="form-control mt-4" placeholder="Weight">
+        <input type="text" id="firstName" name="firstName" class="form-control mt-4" placeholder= "Name" value="<%= firstName %>">
+        <input type="text" id="lastName" name="lastName" class="form-control mt-4" placeholder= "Name" value="<%= lastName %>">
+        <input type="text" id="gender" class="form-control mt-4" placeholder="Gender" value="<%= gender %>">
+        <input type="text" id="age" class="form-control mt-4" placeholder="Age" value="<%= age %>">
+        <input type="text" id="condition" class="form-control mt-4" placeholder="Condition" value="<%= condition %>">
+        <input type="text" id="height" class="form-control mt-4" placeholder="Height" value="<%= height %>">
+        <input type="text" id="weight" class="form-control mt-4" placeholder="Weight" value="<%= weight %>">
       </div>
-
-
     </form>
   </section>
 
+
   <div class="container">
     <div class="row ">
-      <div class="col text-center mt-5 ">
+      <div class="col-6 text-center mt-4 ">
+        <a class=" logoutbutton button button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" >Save</a>
+      </div>
+      <div class="col-6 text-center mt-4 ">
         <a class="logoutbutton button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" href="/logout">Log Out</a>
       </div>
     </div>

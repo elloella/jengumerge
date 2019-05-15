@@ -17,6 +17,26 @@ const UserSchema = new mongoose.Schema({
       type: String,
       required: true
   },
+  gender: {
+    type: String,
+    default: ""
+  },
+  age: {
+    type: String,
+    default: ""
+  },
+  condition: {
+    type: String,
+    default: ""
+  },
+  height: {
+    type: String,
+    default: ""
+  },
+  weight: {
+    type: String,
+    default: ""
+  },
   date:{
       type: Date,
       default: Date.now

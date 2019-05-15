@@ -14,8 +14,16 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     });
 })
 
-router.get('/profile', (req, res) => {
-  res.render('profile')
+router.get('/profile',  ensureAuthenticated, (req, res) => {
+  res.render('profile', {
+    firstName: req.user.firstName,
+    lastName: req.user.lastName,
+    gender: req.user.gender,
+    age: req.user.age,
+    condition: req.user.condition,
+    height: req.user.height,
+    weight: req.user.weight
+  })
 })
 
 router.get('/logout', (req,res) => {
