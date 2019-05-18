@@ -4,6 +4,9 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 
+const { ensureAuthenticated } = require('../config/auth');
+
+
 router.get('/signup', (req, res) =>{
   res.render('signup');
 
@@ -74,7 +77,7 @@ router.post('/signup', (req, res) =>{
       ))
     }
   })
- }
+}
 })
 
 router.get('/home', (req, res) =>{
@@ -87,6 +90,29 @@ router.post('/home', (req, res, next ) => {
     failureRedirect: "/account/home",
     failureFlash: true
   })  (req, res, next)
+})
+
+router.post('/editProfile', ensureAuthenticated, (req, res) => {
+  console.log(req.body);
+  User.findById(req.user.id)
+  .then(user => {
+    if (user) {
+      user.firstName = req.body.firstName;
+      user.lastName = req.body.lastName;
+      user.gender = req.body.gender;
+      user.age = req.body.age;
+      user.condition = req.body.condition;
+      user.height = req.body.height;
+      user.weight = req.body.weight;
+      user.save()
+      .then(user => {
+        req.flash('success_msg', 'Changes Saved!')
+        res.redirect('/profile');
+      })
+      .catch(err => console.log(err));
+    }
+
+  })
 })
 
 module.exports = router;

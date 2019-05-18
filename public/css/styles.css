@@ -208,7 +208,7 @@ font-size: 28px;
   background-color: #A7C6E4;
 }
 
-.card-panel { /*setting conditions for the error card-panel */
+.card-panel { /*setting conditions for the messages card-panel */
   color: #253D5B;
   background-color: #A7C6E4;
   font-size: 16px;

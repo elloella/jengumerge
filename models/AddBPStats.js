@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const AddBPStatsSchema = new mongoose.Schema({
   date:{
@@ -24,6 +25,10 @@ const AddBPStatsSchema = new mongoose.Schema({
   notes: {
       type: String,
       required: true
+  },
+  userid:{
+    type: Schema.Types.ObjectId,
+    ref: 'user'
   }
 
 })

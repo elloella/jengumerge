@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { ensureAuthenticated } = require('../config/auth');
+const AddBPStats = require('../models/AddBPStats');
 
 router.get('/', (req, res) =>{
   res.render('home');
@@ -11,6 +12,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {
       firstName: req.user.firstName,
       lastName: req.user.lastName
+
     });
 })
 
@@ -32,9 +34,22 @@ router.get('/logout', (req,res) => {
     res.redirect('/account/home');
 })
 
-router.post('/AddBPStats', (req, res) =>{
-  console.log(req.body);
-  res.redirect('/dashboard');
+router.post('/AddBPStats',  ensureAuthenticated, (req, res) =>{
+
+  const newAddBPStats = {
+    breakfast: req.body.breakfast,
+    lunch: req.body.lunch,
+    dinner: req.body.dinner,
+    night: req.body.night,
+    notes: req.body.notes,
+    userid: req.user.id
+
+  }
+  console.log(newAddBPStats);
+  new AddBPStats(newAddBPStats)
+  .save()
+  .then(res.redirect('/dashboard'))
+
 })
 
 module.exports = router;

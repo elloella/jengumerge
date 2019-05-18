@@ -1,31 +1,34 @@
-<!--Details Section as Form-->
+
 <section class="profiledetails container mt-3">
-  <form>
-    <div class="form-row ">
+  <form action="/account/editProfile" method="POST">
+    <div class="form-row">
       <div class="col">
-        <div class="header col-5 mt-5 ">
+        <div class="header col mt-5 ">
           <i class="profileicon far fa-user"></i>
           <h>Your Profile </h>
         </div>
         <input type="text" id="firstName" name="firstName" class="form-control mt-4" placeholder= "Name" value="<%= firstName %>">
         <input type="text" id="lastName" name="lastName" class="form-control mt-4" placeholder= "Name" value="<%= lastName %>">
-        <input type="text" id="gender" class="form-control mt-4" placeholder="Gender" value="<%= gender %>">
-        <input type="text" id="age" class="form-control mt-4" placeholder="Age" value="<%= age %>">
-        <input type="text" id="condition" class="form-control mt-4" placeholder="Condition" value="<%= condition %>">
-        <input type="text" id="height" class="form-control mt-4" placeholder="Height" value="<%= height %>">
-        <input type="text" id="weight" class="form-control mt-4" placeholder="Weight" value="<%= weight %>">
+        <input type="text" id="gender" name="gender" class="form-control mt-4" placeholder="Gender" value="<%= gender %>">
+        <input type="text" id="age" name="age" class="form-control mt-4" placeholder="Age" value="<%= age %>">
+        <input type="text" id="condition" name="condition" class="form-control mt-4" placeholder="Condition" value="<%= condition %>">
+        <input type="text" id="height" name="height" class="form-control mt-4" placeholder="Height (ft)" value="<%= height %>">
+        <input type="text" id="weight" name="weight" class="form-control mt-4" placeholder="Weight (kg)" value="<%= weight %>">
       </div>
-    </form>
-  </section>
-
-
-  <div class="container">
-    <div class="row ">
-      <div class="col-6 text-center mt-4 ">
-        <a class=" logoutbutton button button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" >Save</a>
-      </div>
-      <div class="col-6 text-center mt-4 ">
-        <a class="logoutbutton button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" href="/logout">Log Out</a>
+      <div class="container">
+        <div class="row ">
+          <div class="col-6 text-center mt-4">
+            <button class="logoutbutton button button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" type="submit" name="action">Save Changes
+          </button>
+        </div>
+        <div class="col-6 text-center mt-4 ">
+          <a class="logoutbutton button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" href="/logout">Log Out</a>
+        </div>
       </div>
     </div>
+    </div>
+</form>
+<div class="card-action mt-5">
+  <% include ./partials/messages %>
   </div>
+</section>
