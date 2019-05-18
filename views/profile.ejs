@@ -1,4 +1,4 @@
-
+<!-- Setting up profile page -->
 <section class="profiledetails container mt-3">
   <form action="/account/editProfile" method="POST">
     <div class="form-row">
@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <input type="text" id="firstName" name="firstName" class="form-control mt-4" placeholder= "Name" value="<%= firstName %>">
+        <input type="text" id="firstName" name="firstName" class="form-control mt-4" placeholder= "Name" value="<%= firstName %>"> <!-- Setting up form -->
         <input type="text" id="lastName" name="lastName" class="form-control mt-4" placeholder= "Name" value="<%= lastName %>">
         <input type="text" id="gender" name="gender" class="form-control mt-4" placeholder="Gender" value="<%= gender %>">
         <input type="text" id="age" name="age" class="form-control mt-4" placeholder="Age" value="<%= age %>">
@@ -25,11 +25,10 @@
       <div class="container">
         <div class="row ">
           <div class="col-6 text-center mt-4">
-            <button class="logoutbutton button button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" type="submit" name="action">Save Changes
-            </button>
+            <button class="logoutbutton button button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" type="submit" name="action">Save Changes </button> <!-- Save button -->
           </div>
           <div class="col-6 text-center mt-4 ">
-            <a class="logoutbutton button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" href="/logout">Log Out</a>
+            <a class="logoutbutton button btn btn-default btn-block btn-lg mt-2 pt-2 pb-2" href="/logout">Log Out</a> <!-- Log out button -->
           </div>
         </div>
       </div>

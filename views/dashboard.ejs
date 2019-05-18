@@ -6,38 +6,31 @@
       <!-- Setting up chart-->
       <div class="chartContainer w-100">
         <div class="row" role="tablist">
-          <!-- <div class="col-1 text-center">
-          <button type="button" class="button1 btn btn-default btn-sm pb-2" id="bp" data-toggle="tab" href="#BP" role="tab" aria-controls="BP" aria-selected="true">Blood Pressure</button>
         </div>
-        <div class="col-5 text-center">
-        <button type="button" class="button1 btn btn-default btn-sm pb-2" id="bs" data-toggle="tab" href="#BS" role="tab" aria-controls="BS" aria-selected="false">Blood Sugar</button>
-      </div> -->
-
+        <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#AddBPStats" ></i> <!-- Setting up add modal -->
+        <canvas id="myChart" > </canvas>
+        <div class="row symbols">
+          <i class="col text-left fas fa-chevron-left pb-1 " id="left-bs" ></i> <!-- Setting up the arrows -->
+          <i class="col text-right fas fa-chevron-right pb-1" id="right-bs"></i>
+          <i class="col text-left fas fa-chevron-left pb-1 " id="left-bp" ></i>
+          <i class="col text-right fas fa-chevron-right pb-1" id="right-bp"></i>
+        </div>
+      </div>
     </div>
-    <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#AddBPStats" ></i>
-    <canvas id="myChart" > </canvas>
-    <div class="row symbols">
-      <i class="col text-left fas fa-chevron-left pb-1 " id="left-bs" ></i>
-      <i class="col text-right fas fa-chevron-right pb-1" id="right-bs"></i>
-      <i class="col text-left fas fa-chevron-left pb-1 " id="left-bp" ></i>
-      <i class="col text-right fas fa-chevron-right pb-1" id="right-bp"></i>
+
+    <!-- Setting up breakdown -->
+    <div class="breakdown col-md-6 mt-5 d-flex align-self-stretch">
+      <div class="breakdownContainer pt-2 pl-2 pb-2" >
+        <h class="DB font-weight-bold "> Daily Breakdown: </h>
+        <p class="DB font-weight-bold"> 14/3 </p>
+        <p> <i class="fas fa-coffee pr-2"></i>Breakfast Reading - 0.0 mmol/L </p>
+        <p> <i class="fas fa-hamburger pr-2"></i>Lunch Reading - 0.0 mmol/L </p>
+        <p> <i class="fas fa-pizza-slice pr-2"></i>Dinner Reading - 0.0 mmol/L </p>
+        <p> <i class="fas fa-moon pr-2"></i>Evening Reading - 0.0 mmol/L </p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit. </p>
+      </div>
     </div>
   </div>
-</div>
-
-<!-- Setting up breakdown -->
-<div class="breakdown col-md-6 mt-5 d-flex align-self-stretch">
-  <div class="breakdownContainer pt-2 pl-2 pb-2" >
-    <h class="DB font-weight-bold "> Daily Breakdown: </h>
-    <p class="DB font-weight-bold"> 14/3 </p>
-    <p> <i class="fas fa-coffee pr-2"></i>Breakfast Reading - 0.0 mmol/L </p>
-    <p> <i class="fas fa-hamburger pr-2"></i>Lunch Reading - 0.0 mmol/L </p>
-    <p> <i class="fas fa-pizza-slice pr-2"></i>Dinner Reading - 0.0 mmol/L </p>
-    <p> <i class="fas fa-moon pr-2"></i>Evening Reading - 0.0 mmol/L </p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur adipiscing elit. </p>
-  </div>
-</div>
-</div>
 </section>
 
 <!-- Table  -->
@@ -85,7 +78,7 @@
               <form action='/AddBPStats' method='POST'>
 
                 <div class="form-group ">
-                  <input id="breakfast" class="test form-control" name="breakfast" type="number" placeholder="Breakfast Figures" required />
+                  <input id="breakfast" class="test form-control" name="breakfast" type="number" placeholder="Breakfast Figures" required /> 
                 </div>
                 <div class="form-group ">
                   <input id="lunch" class="test form-control" name="lunch" type="number" placeholder="Lunch Figures" required />

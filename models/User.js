@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({ //Setting up the backend form for sign up & profile page
   firstName: {
       type: String,
-      required: true
+      required: true  
   },
   lastName: {
       type: String,
@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
-    default: ""
+    default: ""    //Following not set to true as they are not required in inital sign up
   },
   age: {
     type: String,

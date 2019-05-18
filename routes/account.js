@@ -6,7 +6,6 @@ const passport = require('passport');
 
 const { ensureAuthenticated } = require('../config/auth');
 
-
 router.get('/signup', (req, res) =>{
   res.render('signup');
 

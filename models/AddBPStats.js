@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const AddBPStatsSchema = new mongoose.Schema({
+const AddBPStatsSchema = new mongoose.Schema({ //Setting up the backend form for the addition of data
   date:{
       type: Date,
       default: Date.now

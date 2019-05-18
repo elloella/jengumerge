@@ -5,21 +5,20 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
 module.exports = function(passport){
-
   passport.use(
-    new LocalStrategy({ usernameField: 'email'}, (email, password, done) =>{
+    new LocalStrategy({ usernameField: 'email'}, (email, password, done) =>{ //Won't let user log in if they haven't signed up with that email
       User.findOne({
         email: email
       }).then(user =>{
         if(!user){
-          return done(null, false, { message: ' That email is not registered'});
+          return done(null, false, { message: 'That email is not registered'});
         }
-        bcrypt.compare(password, user.password, (err, isMatch) => {
+        bcrypt.compare(password, user.password, (err, isMatch) => { //Recognises if the password doesn't fit and gives error
           if(err) throw err;
           if(isMatch) {
             return done(null, user);
           } else {
-            return done(null, false, { message: 'Password Wrong'});
+            return done(null, false, { message: 'Password wrong'});
           }
         })
       })
