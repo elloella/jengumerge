@@ -271,17 +271,20 @@ $('textarea').keypress(
         $('<div class="msg-right">'+msg+'</div>').insertBefore('[rel="'+chatbox+'"] .msg_push');
         $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
       }
+      var question = document.getElementById('msg-footer');
+      document.getElementById('msg').style.display="block";
+      document.getElementById('msg').style.opacity="1";
     }
   });
 
 
-Chart.defaults.global.defaultFontColor='#253D5B'; //Setting the font colour of graph
+  Chart.defaults.global.defaultFontColor='#253D5B'; //Setting the font colour of graph
 
-window.onload = function() { //Setting up copyright
-  currentYear();
-};
-function currentYear(){
-  const date = new Date();
-  const autoDate = document.querySelector('#autoDate');
-  autoDate.textContent = date.getFullYear();
-};
+  window.onload = function() { //Setting up copyright
+    currentYear();
+  };
+  function currentYear(){
+    const date = new Date();
+    const autoDate = document.querySelector('#autoDate');
+    autoDate.textContent = date.getFullYear();
+  };

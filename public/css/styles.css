@@ -66,6 +66,7 @@ table.table-bordered > tbody > tr > td{
 
 .modal-header { /* Setting the conditions of header for modals */
     padding:9px 15px;
+    color: #ffffff;
     border-bottom:1px solid #6e8fc5;
     background-color: #6e8fc5;
     -webkit-border-top-left-radius: 5px;
@@ -135,6 +136,20 @@ table.table-bordered > tbody > tr > td{
  word-break: break-all;
 }
 
+.msg-left2{
+  position:relative;
+  background:#A7C6E4;
+  padding:6px;
+  min-height:10px;
+  margin-bottom:5px;
+  margin-right:50px;
+  border-radius:5px;
+  word-break: break-all;
+  opacity: 0;
+  transition: ease all 0.5s;
+  transition-delay: 2s;
+}
+
 .msg-right{
  background:#d4e7fa;
  padding:5px;
@@ -161,7 +176,7 @@ font-size: 28px;
 
 .form-control{ /* Setting the conditions for the form */
   color: #253D5B;
-  background-color: #A7C6E4;
+  /* background-color: #A7C6E4; */
   font-size: 20px;
 }
 
