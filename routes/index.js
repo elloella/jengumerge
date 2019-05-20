@@ -25,7 +25,8 @@ router.get('/profile',  ensureAuthenticated, (req, res) => {
     age: req.user.age,
     condition: req.user.condition,
     height: req.user.height,
-    weight: req.user.weight
+    weight: req.user.weight,
+    date: req.user.date
   })
 })
 
@@ -43,6 +44,7 @@ router.post('/AddBPStats',  ensureAuthenticated, (req, res) =>{
     dinner: req.body.dinner,
     night: req.body.night,
     notes: req.body.notes,
+    date: req.body.date,
     userid: req.user.id
 
   }

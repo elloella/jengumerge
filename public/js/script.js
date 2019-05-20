@@ -32,6 +32,17 @@ $('textarea').keypress( //Setting the text area to send message on press of ente
     }
   });
 
+  $(document).ready(function(){
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.modal-body form').length>0 ? $('.modal-body form').parent() : "body";
+    var options={
+      format: 'mm/dd/yyyy',
+      container: container,
+      todayHighlight: true,
+      autoclose: true,
+    };
+    date_input.datepicker(options);
+  })
 
   window.onload = function() { //Setting up copyright
     currentYear();
