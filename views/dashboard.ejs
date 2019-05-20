@@ -28,6 +28,10 @@
         <p> <i class="fas fa-pizza-slice pr-2"></i>Dinner Reading - <span class="dinnerVal">--</span> mmol/L </p>
         <p> <i class="fas fa-moon pr-2"></i>Evening Reading - <span class="eveningVal">--</span> mmol/L </p>
         <p> <span class="notesVal">--</span> </p>
+        <div class="row symbols pt-5">
+        <i class="col text-left fas fa-chevron-left pb-1 d-inline-block" id="cycleBreakDownLeft"></i>
+        <i class="col text-right fas fa-chevron-right pb-1 d-inline-block mr-2" id=cycleBreakDownRight></i>
+        </div>
       </div>
     </div>
   </div>
@@ -81,16 +85,16 @@
                   <input id="date" class="test form-control" name="date" type="text" placeholder="MM/DD/YYY" required />
                 </div>
                 <div class="form-group ">
-                  <input id="breakfast" class="test form-control" name="breakfast" type="number" placeholder="Breakfast Figures" required />
+                  <input id="breakfast" class="test form-control" name="breakfast" type="number" step="any" placeholder="Breakfast Figures" required />
                 </div>
                 <div class="form-group ">
-                  <input id="lunch" class="test form-control" name="lunch" type="number" placeholder="Lunch Figures" required />
+                  <input id="lunch" class="test form-control" name="lunch" type="number" placeholder="Lunch Figures" step="any" required />
                 </div>
                 <div class="form-group ">
-                  <input id="dinner" class="test form-control" name="dinner" type="number" placeholder="Dinner Figures" required />
+                  <input id="dinner" class="test form-control" name="dinner" type="number" placeholder="Dinner Figures" step="any" required />
                 </div>
                 <div class="form-group ">
-                  <input id="night" class="test form-control" name="night" type="number" placeholder="Night Figures" required />
+                  <input id="night" class="test form-control" name="night" type="number" placeholder="Night Figures" step="any" required />
                 </div>
                 <div class="form-group ">
                   <input id="notes" class="test form-control" name="notes" type="text" placeholder="Notes" required />
@@ -107,7 +111,6 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', (event) => {
-
     //Variables for Charts
     var date = document.querySelector('.dateVal');
     var breakfast = document.querySelector('.breakfastVal');
@@ -115,23 +118,25 @@
     var dinner = document.querySelector('.dinnerVal');
     var evening = document.querySelector('.eveningVal');
     var notes = document.querySelector('.notesVal');
-
     var lowest = document.querySelector('#lowest');
     var highest = document.querySelector('#highest');
     var average = document.querySelector('#average');
+
+    var leftCycle = document.querySelector('#cycleBreakDownLeft');
+    var rightCycle = document.querySelector('#cycleBreakDownRight');
 
     fetch('/BPStats/<%= userID %>')
     .then(
     function (response) {
       response.json().then(function (data) {
         console.log(data);
-
-    var breakfastVal = data[0].breakfast;
-    var lunchVal = data[0].lunch;
-    var dinnerVal = data[0].dinner;
-    var eveningVal = data[0].night;
-    var notesVal = data[0].notes;
-    var dateVal = data[0].date;
+    var cycleCount = 0;
+    var breakfastVal = data[cycleCount].breakfast;
+    var lunchVal = data[cycleCount].lunch;
+    var dinnerVal = data[cycleCount].dinner;
+    var eveningVal = data[cycleCount].night;
+    var notesVal = data[cycleCount].notes;
+    var dateVal = data[cycleCount].date;
 
     breakfast.innerHTML = breakfastVal;
     lunch.innerHTML = lunchVal;
@@ -139,35 +144,69 @@
     evening.innerHTML = eveningVal;
     notes.innerHTML = notesVal;
     date.innerHTML = dateVal;
+
+    leftCycle.addEventListener('click', ()=>{
+      if(cycleCount > 0){
+        cycleCount--;
+        breakfastVal = data[cycleCount].breakfast;
+        lunchVal = data[cycleCount].lunch;
+        dinnerVal = data[cycleCount].dinner;
+        eveningVal = data[cycleCount].night;
+        notesVal = data[cycleCount].notes;
+        dateVal = data[cycleCount].date;
+
+        breakfast.innerHTML = breakfastVal;
+        lunch.innerHTML = lunchVal;
+        dinner.innerHTML = dinnerVal;
+        evening.innerHTML = eveningVal;
+        notes.innerHTML = notesVal;
+        date.innerHTML = dateVal;
+      } else {
+        return;
+      }
+    })
+
+
+    rightCycle.addEventListener('click', ()=>{
+      if(cycleCount => 0 && cycleCount < data.length()){
+        cycleCount++;
+        breakfastVal = data[cycleCount].breakfast;
+        lunchVal = data[cycleCount].lunch;
+        dinnerVal = data[cycleCount].dinner;
+        eveningVal = data[cycleCount].night;
+        notesVal = data[cycleCount].notes;
+        dateVal = data[cycleCount].date;
+
+        breakfast.innerHTML = breakfastVal;
+        lunch.innerHTML = lunchVal;
+        dinner.innerHTML = dinnerVal;
+        evening.innerHTML = eveningVal;
+        notes.innerHTML = notesVal;
+        date.innerHTML = dateVal;
+      } else {
+        return;
+      }
+    })
+
     var valueArray = [breakfastVal, lunchVal, dinnerVal, eveningVal];
     var totalValueArray = valueArray.reduce((previous, current) => current += previous);
-
     const minValue = Math.min(...valueArray);
     lowest.innerHTML = minValue;
-
     const maxValue = Math.max(...valueArray);
     highest.innerHTML = maxValue;
-
     average.innerHTML = totalValueArray / valueArray.length;
-
     var chart_labels = [];
     var sugar_dataset = [];
-
     data.forEach(entry =>{
       chart_labels.push([entry.date]);
       sugar_dataset.push([(
       (entry.breakfast + entry.lunch + entry.dinner + entry.night)/4
       )]);
     })
-
     var diastolic_dataset = [120, 115, 112, 100, 113, ];
     var systolic_dataset = [85, 87, 90, 75, 77, ];
     var pointBackgroundColors = [];
     var ctx = document.getElementById('myChart');
-
-    //document.getElementById('lowest').firstChild.data = '3.7';
-    //document.getElementById('highest').firstChild.data = '14.3';
-    //document.getElementById('average').firstChild.data = '6.7';
 
     //Setting up BS current week chart
     var config = {
@@ -182,38 +221,31 @@
           fill: false,
           borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
           data: sugar_dataset,
-
         }]
       },
       options: {
         legend: {
           display: false
         },
-
         scales: {
           yAxes: [{
             gridLines: {
               display: false,
               color: 'rgb(110, 143, 197)'
-
             },
             scaleLabel: {
               display: true,
               labelString: 'Blood Sugar (mmol/l)' //Adding label for yAxes
             },
-
           }],
-
           xAxes: [{
             gridLines: {
               display: false,
               color: 'rgb(110, 143, 197)'
-
             },
             scaleLabel: {
               display: true,
               labelString: 'Date' //Setting label for xAxes
-
             }
           }]
         }
@@ -225,15 +257,11 @@
       data.datasets[0].data = sugar_dataset;
       data.labels = chart_labels;
       myChart_chart.update();
-      document.getElementById('lowest').firstChild.data = '3.2';
-      document.getElementById('highest').firstChild.data = '14.3';
-      document.getElementById('average').firstChild.data = '6.7';
       document.getElementById('left-bs').style.display = "inline-block";
       document.getElementById('right-bs').style.display = "inline-block";
       document.getElementById('left-bp').style.display = "none";
       document.getElementById('right-bp').style.display = "none";
     });
-
     //If statement for the point colour
     for (i = 0; i < myChart_chart.data.datasets[0].data.length; i++) {
       if (myChart_chart.data.datasets[0].data[i] < 4) {
@@ -246,174 +274,155 @@
     }
     myChart_chart.update();
 
-    //Setting up last week BS chart
-    $("#left-bs").click(function () {
-      var chart_labels = ['3/3', '4/3', '5/3', '6/3', '7/3', '8/3', '9/3'];
-      var sugar_dataset = [10, 3, 17, 11, 13, 5, 7];
-      var data = myChart_chart.config.data;
-      data.datasets[0].data = sugar_dataset;
-      data.labels = chart_labels;
-      myChart_chart.update();
-      document.getElementById('lowest').firstChild.data = '4.3';
-      document.getElementById('highest').firstChild.data = '17.6';
-      document.getElementById('average').firstChild.data = '8.1';
-      document.getElementById('left-bs').style.display = "inline-block";
-      document.getElementById('right-bs').style.display = "inline-block";
-      document.getElementById('left-bp').style.display = "none";
-      document.getElementById('right-bp').style.display = "none";
-    });
+    //Setting up last week BS chart - AWAITING FUTURE DEVELOPMENT
+    // $("#left-bs").click(function () {
+    //   var chart_labels = ['3/3', '4/3', '5/3', '6/3', '7/3', '8/3', '9/3'];
+    //   var sugar_dataset = [10, 3, 17, 11, 13, 5, 7];
+    //   var data = myChart_chart.config.data;
+    //   data.datasets[0].data = sugar_dataset;
+    //   data.labels = chart_labels;
+    //   myChart_chart.update();
+    //   document.getElementById('lowest').firstChild.data = '4.3';
+    //   document.getElementById('highest').firstChild.data = '17.6';
+    //   document.getElementById('average').firstChild.data = '8.1';
+    //   document.getElementById('left-bs').style.display = "inline-block";
+    //   document.getElementById('right-bs').style.display = "inline-block";
+    //   document.getElementById('left-bp').style.display = "none";
+    //   document.getElementById('right-bp').style.display = "none";
+    // });
 
-    // Setting up BP current week chart
-    $("#bp, #right-bp").click(function () {
-      var config = {
-        type: 'line',
-        data: {
-          labels: chart_labels, //Setting labels for xAxes
-          datasets: [{
-            label: 'Blood Pressure',
-            lineTension: 0,
-            fill: false,
-            borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
-            data: diastolic_dataset,
-
-          }, {
-            lineTension: 0,
-            fill: false,
-            borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
-            data: systolic_dataset,
-          }]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            yAxes: [{
-              gridLines: {
-                display: false,
-                color: 'rgb(110, 143, 197)'
-
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Blood Pressure (mmHg)' //Adding label for yAxes
-              },
-
-            }],
-
-            xAxes: [{
-              gridLines: {
-                display: false,
-                color: 'rgb(110, 143, 197)'
-
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Date' //Setting label for xAxes
-
-              }
-            }]
-          }
-        }
-      };
-      var myChart_chart = new Chart(ctx, config);
-      var data = myChart_chart.config.data;
-      data.datasets[0].data = diastolic_dataset;
-      data.datasets[1].data = systolic_dataset;
-      data.labels = chart_labels;
-      myChart_chart.update();
-      document.getElementById('lowest').firstChild.data = '70 106';
-      document.getElementById('highest').firstChild.data = '80 120';
-      document.getElementById('average').firstChild.data = '75 112';
-      document.getElementById('left-bs').style.display = "none";
-      document.getElementById('right-bs').style.display = "none";
-      document.getElementById('left-bp').style.display = "inline-block";
-      document.getElementById('right-bp').style.display = "inline-block";
-    });
-
-    // Setting up BP current last week chart
-    $("#left-bp").click(function () {
-      var config = {
-        type: 'line',
-        data: {
-          labels: chart_labels, //Setting labels for xAxes
-          datasets: [{
-            label: 'Blood Pressure',
-            lineTension: 0,
-            fill: false,
-            borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
-            data: diastolic_dataset,
-
-          }, {
-            lineTension: 0,
-            fill: false,
-            borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
-            data: systolic_dataset,
-          }]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            yAxes: [{
-              gridLines: {
-                display: false,
-                color: 'rgb(110, 143, 197)'
-
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Blood Pressure (mmHg)' //Adding label for yAxes
-              },
-
-            }],
-
-            xAxes: [{
-              gridLines: {
-                display: false,
-                color: 'rgb(110, 143, 197)'
-
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Date' //Setting label for xAxes
-
-              }
-            }]
-          }
-        }
-      };
-      var myChart_chart = new Chart(ctx, config);
-      var data = myChart_chart.config.data;
-      var diastolic_dataset = [115, 110, 112, 100, 105, 115, 120];
-      var systolic_dataset = [90, 82, 93, 70, 62, 81, 75];
-      data.datasets[0].data = diastolic_dataset;
-      data.datasets[1].data = systolic_dataset;
-      data.labels = chart_labels;
-      myChart_chart.update();
-      document.getElementById('lowest').firstChild.data = '80 110';
-      document.getElementById('highest').firstChild.data = '92 115';
-      document.getElementById('average').firstChild.data = '79 100';
-      document.getElementById('left-bs').style.display = "none";
-      document.getElementById('right-bs').style.display = "none";
-      document.getElementById('left-bp').style.display = "inline-block";
-      document.getElementById('right-bp').style.display = "inline-block";
-    });
-
+    // Setting up BP current week chart - AWAITING FUTURE DEVELOPMENT
+    // $("#bp, #right-bp").click(function () {
+    //   var config = {
+    //     type: 'line',
+    //     data: {
+    //       labels: chart_labels, //Setting labels for xAxes
+    //       datasets: [{
+    //         label: 'Blood Pressure',
+    //         lineTension: 0,
+    //         fill: false,
+    //         borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
+    //         data: diastolic_dataset,
+    //       }, {
+    //         lineTension: 0,
+    //         fill: false,
+    //         borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
+    //         data: systolic_dataset,
+    //       }]
+    //     },
+    //     options: {
+    //       legend: {
+    //         display: false
+    //       },
+    //       scales: {
+    //         yAxes: [{
+    //           gridLines: {
+    //             display: false,
+    //             color: 'rgb(110, 143, 197)'
+    //           },
+    //           scaleLabel: {
+    //             display: true,
+    //             labelString: 'Blood Pressure (mmHg)' //Adding label for yAxes
+    //           },
+    //         }],
+    //         xAxes: [{
+    //           gridLines: {
+    //             display: false,
+    //             color: 'rgb(110, 143, 197)'
+    //           },
+    //           scaleLabel: {
+    //             display: true,
+    //             labelString: 'Date' //Setting label for xAxes
+    //           }
+    //         }]
+    //       }
+    //     }
+    //   };
+    //   var myChart_chart = new Chart(ctx, config);
+    //   var data = myChart_chart.config.data;
+    //   data.datasets[0].data = diastolic_dataset;
+    //   data.datasets[1].data = systolic_dataset;
+    //   data.labels = chart_labels;
+    //   myChart_chart.update();
+    //   document.getElementById('lowest').firstChild.data = '70 106';
+    //   document.getElementById('highest').firstChild.data = '80 120';
+    //   document.getElementById('average').firstChild.data = '75 112';
+    //   document.getElementById('left-bs').style.display = "none";
+    //   document.getElementById('right-bs').style.display = "none";
+    //   document.getElementById('left-bp').style.display = "inline-block";
+    //   document.getElementById('right-bp').style.display = "inline-block";
+    // });
+    //
+    // Setting up BP current last week chart - AWAITING FUTURE DEVELOPMENT
+    // $("#left-bp").click(function () {
+    //   var config = {
+    //     type: 'line',
+    //     data: {
+    //       labels: chart_labels, //Setting labels for xAxes
+    //       datasets: [{
+    //         label: 'Blood Pressure',
+    //         lineTension: 0,
+    //         fill: false,
+    //         borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
+    //         data: diastolic_dataset,
+    //       }, {
+    //         lineTension: 0,
+    //         fill: false,
+    //         borderColor: 'rgb(110, 143, 197)', //Setting border colour for graph
+    //         data: systolic_dataset,
+    //       }]
+    //     },
+    //     options: {
+    //       legend: {
+    //         display: false
+    //       },
+    //       scales: {
+    //         yAxes: [{
+    //           gridLines: {
+    //             display: false,
+    //             color: 'rgb(110, 143, 197)'
+    //           },
+    //           scaleLabel: {
+    //             display: true,
+    //             labelString: 'Blood Pressure (mmHg)' //Adding label for yAxes
+    //           },
+    //         }],
+    //         xAxes: [{
+    //           gridLines: {
+    //             display: false,
+    //             color: 'rgb(110, 143, 197)'
+    //           },
+    //           scaleLabel: {
+    //             display: true,
+    //             labelString: 'Date' //Setting label for xAxes
+    //           }
+    //         }]
+    //       }
+    //     }
+    //   };
+    //   var myChart_chart = new Chart(ctx, config);
+    //   var data = myChart_chart.config.data;
+    //   var diastolic_dataset = [115, 110, 112, 100, 105, 115, 120];
+    //   var systolic_dataset = [90, 82, 93, 70, 62, 81, 75];
+    //   data.datasets[0].data = diastolic_dataset;
+    //   data.datasets[1].data = systolic_dataset;
+    //   data.labels = chart_labels;
+    //   myChart_chart.update();
+    //   document.getElementById('lowest').firstChild.data = '80 110';
+    //   document.getElementById('highest').firstChild.data = '92 115';
+    //   document.getElementById('average').firstChild.data = '79 100';
+    //   document.getElementById('left-bs').style.display = "none";
+    //   document.getElementById('right-bs').style.display = "none";
+    //   document.getElementById('left-bp').style.display = "inline-block";
+    //   document.getElementById('right-bp').style.display = "inline-block";
+    // });
 
     Chart.defaults.global.defaultFontColor = '#253D5B'; //Setting the font colour of graph
-
-
       });
-
     });
   }
   )
   .catch(function (err) {
     console.log('Fetch Error :-S', err);
   });
-
-
-
 </script>
