@@ -22,6 +22,7 @@ body { /*Setting the body font and size.*/
   color: #253D5B;
   background-color: #a7c6e4;
   font-size: 18px;
+  width: 100%
 }
 
 .DB{ /*Setting font size of breakdown title */

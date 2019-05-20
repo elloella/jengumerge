@@ -7,19 +7,19 @@ const AddBPStatsSchema = new mongoose.Schema({ //Setting up the backend form for
       default: Date.now
   },
   breakfast: {
-      type: String,
+      type: Number,
       required: true
   },
   lunch: {
-      type: String,
+      type: Number,
       required: true
   },
   dinner: {
-      type: String,
+      type: Number,
       required: true
   },
   night: {
-      type: String,
+      type: Number,
       required: true
   },
   notes: {

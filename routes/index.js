@@ -11,7 +11,8 @@ router.get('/', (req, res) =>{
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     res.render('dashboard', {
       firstName: req.user.firstName,
-      lastName: req.user.lastName
+      lastName: req.user.lastName,
+      userID: req.user.id
 
     });
 })
@@ -51,5 +52,19 @@ router.post('/AddBPStats',  ensureAuthenticated, (req, res) =>{
   .then(res.redirect('/dashboard'))
 
 })
+
+router.get('/BPStats/:id', ensureAuthenticated, (req, res) => {
+
+  AddBPStats.find({
+    userid: req.params.id
+  }, function (err, docs) {
+    if (!err) {
+      res.send(docs);
+    } else {
+      throw err;
+    }
+  });
+})
+
 
 module.exports = router;
