@@ -4,24 +4,9 @@
 
             <!-- Setting up chart-->
             <div class="chartContainer w-100">
-
-            <div class="tabs">
-              <ul class="nav nav-tabs pb-0" id="myTab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="bloodSugar-tab" data-toggle="tab" href="#bloodSugar" role="tab"
-                    aria-controls="bloodSugar" aria-selected="true">Blood Sugar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="bloodPressure-tab" data-toggle="tab" href="#bloodPressure" role="tab"
-                    aria-controls="bloodPressure" aria-selected="false">Blood Pressure</a>
-                </li>
-              </ul>
-              </div>
-
-
                 <div class="row" role="tablist">
                 </div>
-                <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#AddBPStats"></i>
+                <i class=" col text-right fas fa-plus mt-1 pt-1 pb-1" data-toggle="modal" data-target="#AddBSStats"></i>
                 <!-- Setting up add modal -->
                 <canvas id="bloodSugarChart"> </canvas>
             </div>
@@ -69,7 +54,11 @@
 
 
 <!-- Add Modal -->
+<<<<<<< HEAD
 <div class="modal fade" id="AddBPStats" tabindex="-1" role="dialog" aria-labelledby="Addlabel" aria-hidden="true">
+=======
+<div class="modal fade" id="AddBSStats" tabindex="-1" role="dialog" aria-labelledby="Addlabel" aria-hidden="true">
+>>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -81,7 +70,11 @@
             </div>
             <div class="modal-body">
                 <div class="modal-body">
+<<<<<<< HEAD
                     <form action='/AddBPStats' method='POST'>
+=======
+                    <form action='/AddBSStats' method='POST'>
+>>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
 
                         <div class="form-group ">
                             <input id="date" class="test form-control" name="date" type="text" placeholder="MM/DD/YYY"
@@ -133,7 +126,11 @@
         var leftCycle = document.querySelector('#cycleBreakDownLeft');
         var rightCycle = document.querySelector('#cycleBreakDownRight');
 
+<<<<<<< HEAD
         fetch('/BPStats/<%= userID %>')
+=======
+        fetch('/BSStats/<%= userID %>')
+>>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
             .then(
                 function (response) {
                     response.json().then(function (data) {
@@ -211,8 +208,11 @@
                                 (entry.breakfast + entry.lunch + entry.dinner + entry.night) / 4
                             )]);
                         })
+<<<<<<< HEAD
                         var diastolic_dataset = [120, 115, 112, 100, 113,];
                         var systolic_dataset = [85, 87, 90, 75, 77,];
+=======
+>>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
                         var pointBackgroundColors = [];
                         var bloodSugarCTX = document.getElementById('bloodSugarChart');
 
@@ -281,4 +281,8 @@
             });
 
     });
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
