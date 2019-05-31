@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12">
+    <!-- <ul class="nav nav-tabs mt-2 p-3 pb-0" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="bloodSugar-tab" data-toggle="tab" href="#bloodSugar" role="tab"
+          aria-controls="bloodSugar" aria-selected="true">Blood Sugar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="bloodPressure-tab" data-toggle="tab" href="#bloodPressure" role="tab"
+          aria-controls="bloodPressure" aria-selected="false">Blood Pressure</a>
+      </li>
+    </ul> -->
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="bloodSugar" role="tabpanel" aria-labelledby="bloodSugar-tab">
+        <% include ./partials/bloodSugar %>
+      </div>
+      <div class="tab-pane fade" id="bloodPressure" role="tabpanel" aria-labelledby="bloodPressure-tab">
+        <% include ./partials/bloodPressure %>
+      </div>
+
+    </div>
+    <!-- GP Button -->
+    <div class="GPCHAT">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center">
+            <button type="button" id="GP" class="button GPbutton btn btn-default btn-block btn-lg mt-2 pb-2"> Have a
+              question for your GP?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

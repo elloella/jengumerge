@@ -1,0 +1,261 @@
+body { /*Setting the body font and size.*/
+  padding-top: 50px;
+  color: #253D5B;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 22px;
+}
+
+.navbar{   /* background-color: #6e8fc5; */
+  background-color: #35A793;
+}
+
+.profileicon { /*Setting colour of profile icon*/
+    color: #253D5B;
+}
+
+.chartContainer { /*Editing the chart container to add border*/
+    border: 3px solid #6e8fc5;
+    box-sizing: border-box;
+}
+
+.breakdownContainer{ /*Setting conditions of breakdown container*/
+  color: #253D5B;
+  background-color: #a7c6e4;
+  font-size: 18px;
+  width: 100%
+}
+
+.DB{ /*Setting font size of breakdown title */
+  font-size: 22px;
+}
+
+table.table-bordered > thead > tr > th{ /*Setting the boarder colour for the table*/
+    border:3px solid #6e8fc5;
+}
+table.table-bordered > tbody > tr > td{
+    border:3px solid #6e8fc5;
+}
+
+.table{ /* Setting font size of table */
+  font-size: 18px;
+}
+
+.GPbutton{ /*Setting the GP button colours*/
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
+.Addbutton{ /*Setting conditions of the add button*/
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
+  .nav-tabs .nav-item{ /*Styling the tabs */
+  color: #253D5B;
+  background-color: #fff;
+  border-bottom: 2px solid #6e8fc5;
+  border-right: 2px solid #6e8fc5;
+  /* border-width: 2px; */
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  font-weight: bold;
+  border-bottom-color: #fff;
+}
+
+ul.nav li a, ul.nav li a:visited { /*removes the link colour change on the tabs */
+    color: #253D5B !important;
+}
+
+#left-bp { display: none; }
+#right-bp { display: none; }
+
+.modal-header { /* Setting the conditions of header for modals */
+    padding:9px 15px;
+    color: #ffffff;
+    border-bottom:1px solid #6e8fc5;
+    background-color: #6e8fc5;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+
+/*Chat box conditions  Sourced from - https://www.skptricks.com/2018/02/facebook-style-chat-box-popup-layout-design.html */
+.msg_box{
+ position:fixed;
+ bottom:-5px;
+ width:320px;
+ background:white;
+ border-radius:5px 5px 0px 0px;
+}
+
+.msg_head{
+ background: #6E8FC5;
+ color: #ffffff;
+ padding:7px;
+ cursor:pointer;
+ border-radius:5px 5px 0px 0px;
+ font-size: 20px;
+}
+
+.msg_body{
+ background:white;
+ height:250px;
+ font-size:14px;
+ padding:15px;
+ overflow:auto;
+ overflow-x: hidden;
+ border-left: 2px solid #6E8FC5;
+ border-right: 2px solid #6E8FC5;
+}
+
+.msg_input{
+ width:100%;
+ height: 45px;
+ font-size: 14px;
+ box-sizing: border-box;
+ border: 2px solid #6E8FC5;
+}
+
+.exit{
+ float:right;
+ cursor:pointer;
+}
+
+.minimize{
+ float:right;
+ cursor:pointer;
+ padding-right:5px;
+}
+
+.msg-left{
+ position:relative;
+ background:#A7C6E4;
+ padding:6px;
+ min-height:10px;
+ margin-bottom:5px;
+ margin-right:50px;
+ border-radius:5px;
+ word-break: break-all;
+}
+
+.msg-leftresponse{
+  position:relative;
+  background:#A7C6E4;
+  padding:6px;
+  min-height:10px;
+  margin-bottom:5px;
+  margin-right:50px;
+  border-radius:5px;
+  word-break: break-all;
+  opacity: 0;
+  transition: ease all 0.5s; /*Sets up the transition for the automatic response*/
+  transition-delay: 2s;
+}
+
+.msg-right{
+ background:#d4e7fa;
+ padding:5px;
+ min-height:15px;
+ margin-bottom:5px;
+ position:relative;
+ margin-left:50px;
+ border-radius:5px;
+ word-break: break-all;
+}
+
+/***PROFILE PAGE***/
+
+.header{ /*Setting up header font*/
+font-size: 28px;
+}
+
+
+.profile{ /*Setting up colour of profile boxes*/
+ color: #253D5B;
+ background-color: #A7C6E4;
+
+}
+
+.form-control{ /* Setting the conditions for the form */
+  color: #253D5B;
+  /* background-color: #A7C6E4; */
+  font-size: 20px;
+}
+
+/***SIGN IN & SIGN UP CONDITIONS***/
+
+.signinbutton{ /* Setting colour of sign in button*/
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
+.signin{ /* Setting font size of sign in text */
+  font-size: 26px;
+}
+
+.form-container{ /* Setting conditions of the form container */
+  color: #253D5B;
+  border: 2px solid #6e8fc5;
+}
+
+.form { /* Setting conditions of the form to center it */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup{ /*  Setting conditions of sign up*/
+  color: #253D5B;
+  font-size: 16px;
+}
+
+.signupbutton{ /*Setting conditions for the signup button */
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
+.formdetails{ /* Setting more form conditions*/
+  color: #253D5B;
+  background-color: #FFFFFF;
+  font-size: 20px;
+}
+
+.logoutbutton{ /* Setting conditons for logout button*/
+  color: #253D5B;
+  background-color: #A7C6E4;
+}
+
+.card-panel { /*setting conditions for the messages card-panel */
+  color: #253D5B;
+  background-color: #A7C6E4;
+  font-size: 16px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+footer{ /*Setting the footer conditions*/
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:  #35A793;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) { /*Setting the footer to become fixed on larger screens*/
+footer{
+  position: fixed;
+  bottom: 0px;
+}
+}
