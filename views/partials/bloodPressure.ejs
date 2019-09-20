@@ -45,38 +45,20 @@
             <div class="modal-body">
                 <div class="modal-body">
                     <form action='/AddBPStats' method='POST'>
-<<<<<<< HEAD
 
-=======
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
                         <div class="form-group ">
                             <input id="date" class="test form-control" name="date" type="text" placeholder="MM/DD/YYY"
                                 required />
                         </div>
                         <div class="form-group ">
-<<<<<<< HEAD
-                            <input id="breakfast" class="test form-control" name="breakfast" type="number" step="any"
-                                placeholder="Breakfast Figures" required />
-                        </div>
-                        <div class="form-group ">
-                            <input id="lunch" class="test form-control" name="lunch" type="number"
-                                placeholder="Lunch Figures" step="any" required />
-                        </div>
-                        <div class="form-group ">
-                            <input id="dinner" class="test form-control" name="dinner" type="number"
-                                placeholder="Dinner Figures" step="any" required />
-                        </div>
-                        <div class="form-group ">
-                            <input id="night" class="test form-control" name="night" type="number"
-                                placeholder="Night Figures" step="any" required />
-=======
+
                             <input id="systolic" class="test form-control" name="systolic" type="number" step="any"
                                 placeholder="Systolic" required />
                         </div>
                         <div class="form-group ">
                             <input id="diastolic" class="test form-control" name="diastolic" type="number"
                                 placeholder="Diastolic Figures" step="any" required />
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
+
                         </div>
                         <div class="form-group ">
                             <input id="notes" class="test form-control" name="notes" type="text" placeholder="Notes"
@@ -96,21 +78,12 @@
     window.addEventListener('DOMContentLoaded', (event) => {
         //Variables for Charts
         var date = document.querySelector('.dateVal');
-<<<<<<< HEAD
-        var breakfast = document.querySelector('.breakfastVal');
-        var lunch = document.querySelector('.lunchVal');
-        var dinner = document.querySelector('.dinnerVal');
-        var evening = document.querySelector('.eveningVal');
-        var notes = document.querySelector('.notesVal');
-        var lowest = document.querySelector('#lowest');
-        var highest = document.querySelector('#highest');
-        var average = document.querySelector('#average');
-=======
+
         var systolic = document.querySelector('.systolicVal');
         var diastolic = document.querySelector('.diastolicVal');
         var notes = document.querySelector('.notesVal');
 
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
+
 
         var leftCycle = document.querySelector('#cycleBreakDownLeft');
         var rightCycle = document.querySelector('#cycleBreakDownRight');
@@ -121,19 +94,7 @@
                     response.json().then(function (data) {
                         console.log(data);
                         var cycleCount = 0;
-<<<<<<< HEAD
-                        var breakfastVal = data[cycleCount].breakfast;
-                        var lunchVal = data[cycleCount].lunch;
-                        var dinnerVal = data[cycleCount].dinner;
-                        var eveningVal = data[cycleCount].night;
-                        var notesVal = data[cycleCount].notes;
-                        var dateVal = data[cycleCount].date;
 
-                        breakfast.innerHTML = breakfastVal;
-                        lunch.innerHTML = lunchVal;
-                        dinner.innerHTML = dinnerVal;
-                        evening.innerHTML = eveningVal;
-=======
                         var systolicVal = data[cycleCount].systolic;
                         var diastolicVal = data[cycleCount].diastolic;
                         var notesVal = data[cycleCount].notes;
@@ -141,34 +102,20 @@
 
                         systolic.innerHTML = systolicVal;
                         diastolic.innerHTML = diastolicVal;
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
+
                         notes.innerHTML = notesVal;
                         date.innerHTML = dateVal;
 
                         leftCycle.addEventListener('click', () => {
                             if (cycleCount > 0) {
                                 cycleCount--;
-<<<<<<< HEAD
-                                breakfastVal = data[cycleCount].breakfast;
-                                lunchVal = data[cycleCount].lunch;
-                                dinnerVal = data[cycleCount].dinner;
-                                eveningVal = data[cycleCount].night;
-                                notesVal = data[cycleCount].notes;
-                                dateVal = data[cycleCount].date;
 
-                                breakfast.innerHTML = breakfastVal;
-                                lunch.innerHTML = lunchVal;
-                                dinner.innerHTML = dinnerVal;
-                                evening.innerHTML = eveningVal;
-=======
                                 systolicVal = data[cycleCount].systolic;
                                 diastolicVal = data[cycleCount].diastolic;
                                 notesVal = data[cycleCount].notes;
                                 dateVal = data[cycleCount].date;
-
                                 systolic.innerHTML = systolicVal;
                                 diastolic.innerHTML = diastolicVal;
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
                                 notes.innerHTML = notesVal;
                                 date.innerHTML = dateVal;
                             } else {
@@ -180,27 +127,12 @@
                         rightCycle.addEventListener('click', () => {
                             if (cycleCount => 0 && cycleCount < data.length()) {
                                 cycleCount++;
-<<<<<<< HEAD
-                                breakfastVal = data[cycleCount].breakfast;
-                                lunchVal = data[cycleCount].lunch;
-                                dinnerVal = data[cycleCount].dinner;
-                                eveningVal = data[cycleCount].night;
-                                notesVal = data[cycleCount].notes;
-                                dateVal = data[cycleCount].date;
-
-                                breakfast.innerHTML = breakfastVal;
-                                lunch.innerHTML = lunchVal;
-                                dinner.innerHTML = dinnerVal;
-                                evening.innerHTML = eveningVal;
-=======
                                 systolicVal = data[cycleCount].systolic;
                                 diastolicVal = data[cycleCount].diastolic;
                                 notesVal = data[cycleCount].notes;
                                 dateVal = data[cycleCount].date;
-
                                 systolic.innerHTML = systolicVal;
                                 diastolic.innerHTML = diastolicVal;
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
                                 notes.innerHTML = notesVal;
                                 date.innerHTML = dateVal;
                             } else {
@@ -208,25 +140,6 @@
                             }
                         })
 
-<<<<<<< HEAD
-                        var valueArray = [breakfastVal, lunchVal, dinnerVal, eveningVal];
-                        var totalValueArray = valueArray.reduce((previous, current) => current += previous);
-                        const minValue = Math.min(...valueArray);
-                        lowest.innerHTML = minValue;
-                        const maxValue = Math.max(...valueArray);
-                        highest.innerHTML = maxValue;
-                        average.innerHTML = totalValueArray / valueArray.length;
-                        var chart_labels = [];
-                        var sugar_dataset = [];
-                        data.forEach(entry => {
-                            chart_labels.push([entry.date]);
-                            sugar_dataset.push([(
-                                (entry.breakfast + entry.lunch + entry.dinner + entry.night) / 4
-                            )]);
-                        })
-                        var diastolic_dataset = [120, 115, 112, 100, 113,];
-                        var systolic_dataset = [85, 87, 90, 75, 77,];
-=======
                         var chart_labels = [];
                         var diastolic_dataset = [];
                         var systolic_dataset = [];
@@ -235,7 +148,7 @@
                             diastolic_dataset.push([entry.diastolic]);
                             systolic_dataset.push([entry.systolic]);
                         })
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
+
                         var pointBackgroundColors = [];
                         var bloodPressureCTX = document.getElementById('bloodPressureChart');
 
@@ -451,8 +364,5 @@
             });
 
     });
-<<<<<<< HEAD
+
 </script>
-=======
-</script>
->>>>>>> d3d6b1bfc43e107ad6f7daec642ba4d4f7ea7f28
